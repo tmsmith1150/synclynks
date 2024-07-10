@@ -1,5 +1,8 @@
-import React from 'react'
-import '@/assets/styles/globals.css'
+import React from 'react';
+import '@/assets/styles/globals.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
 
 export const metadata = {
     title: 'SyncLynks | Medical Alert Jewelry',
@@ -11,8 +14,9 @@ const MainLayout = ({ children }) => {
   return (
     <html lang="en">
         <body>
-    <div>{children}</div>
-    <h1>hello</h1>
+          <Navbar />
+    <main>{children}</main>
+    <Footer />
     </body>
     </html>
   )
