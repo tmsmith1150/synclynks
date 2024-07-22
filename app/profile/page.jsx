@@ -1,6 +1,17 @@
-import React from 'react'
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useSession } from 'next-auth/react';
+import profileDefault from '@/assets/images/profile.png';
 
 const ProfilePage = () => {
+
+    const {data:session} = useSession();
+    const profileImage = session?.user?.image;
+    const profileName = session?.user?.name;
+    const profileEmail = session?.user?.email;
+
   return (
     
     <section className="bg-blue-50">
@@ -10,14 +21,16 @@ const ProfilePage = () => {
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/4 mx-20 mt-10">
               <div className="mb-4">
-                <img
+                <Image
                   className="h-32 w-32 md:h-48 md:w-48 rounded-full mx-auto md:mx-0"
-                  src="/images/profile.png"
+                  src={profileImage || profileDefault}
+                  width={200}
+                  height={200}
                   alt="User"
                 />
               </div>
-              <h2 className="text-2xl mb-4"><span className="font-bold block">Name: </span> John Doe</h2>
-              <h2 className="text-2xl"><span className="font-bold block">Email: </span> john@gmail.com</h2>
+              <h2 className="text-2xl mb-4"><span className="font-bold block">Name: </span>{profileName}</h2>
+              <h2 className="text-2xl"><span className="font-bold block">Email: </span>{profileEmail}</h2>
             </div>
 
             <div className="md:w-3/4 md:pl-4">
