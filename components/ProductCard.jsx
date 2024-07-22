@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
     // <!-- Listing 1 -->
           <div className="rounded-xl shadow-md relative">
             <Image
-              src={`/images/products/${product.images[0]}`}
+              src={product.images[0]}
               alt=""
               height={0}
               width={0}

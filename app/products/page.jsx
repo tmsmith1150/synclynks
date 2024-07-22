@@ -1,9 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import products from '@/products.json';
+// import products from '@/products.json';
 import ProductCard from '@/components/ProductCard';
+import { fetchProducts } from '@/utils/requests';
 
-const AllProductsPage = () => {
+
+
+const AllProductsPage = async () => {
+  const products = await fetchProducts();
+
   return (
     <section className="px-4 py-6">
       <div className="container-xl lg:container m-auto px-4 py-6">

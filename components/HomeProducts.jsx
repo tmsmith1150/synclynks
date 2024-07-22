@@ -1,9 +1,14 @@
 import React from 'react';
-import products from '@/products.json';
+// import products from '@/products.json';
 import ProductCard from './ProductCard';
 import Link from 'next/link';
+import { fetchProducts } from '@/utils/requests';
 
-const HomeProducts = () => {
+
+
+const HomeProducts = async () => {
+    const products = await fetchProducts();
+
     const recentProducts = products
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
