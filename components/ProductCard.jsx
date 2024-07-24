@@ -3,6 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const ProductCard = ({ product }) => {
+  const myButtonStyle = {
+    backgroundColor: "#91433c",
+    hover: "#4f4d4d"
+  }
+
   return (
     // <!-- Listing 1 -->
           <div className="rounded-xl shadow-md relative">
@@ -33,7 +38,8 @@ const ProductCard = ({ product }) => {
                 </div>
                 <Link
                   href={`/products/${product._id}`}
-                  className="h-[36px] bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center text-sm"
+                  style={myButtonStyle}
+                  className="h-[36px] hover:bg-gray-500 text-white px-4 py-2 rounded-lg text-center text-sm"
                 >
                   Details
                 </Link>

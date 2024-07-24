@@ -30,9 +30,16 @@ const Navbar = () => {
 
     console.log(profileImage);
 
+    const myStyles = {
+        backgroundColor: "#1a3027"
+    }
+    const textStyles = {
+        color: "#ffffff"
+    }
+
     return (
         <div>
-            <nav className="bg-blue-700 border-b border-blue-500">
+            <nav className="border-b border-blue-500" style={myStyles}>
                 <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                     <div className="relative flex h-20 items-center justify-between">
                         <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -83,20 +90,24 @@ const Navbar = () => {
                                 <div className="flex space-x-2">
                                     <Link
                                         href="/"
-                                        className={`${pathname === '/' ? 'bg-black text-white rounded-md px-3 py-2' : ''}"text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
+                                        style={textStyles}
+                                        className={`${pathname === '/' ? 'bg-black text-white rounded-md px-3 py-2' : ''}"hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
                                     >Home</Link>
                                     <Link
                                         href="/products"
-                                        className={`${pathname === '/products' ? 'bg-black text-white rounded-md px-3 py-2' : ''}"text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
+                                        style={textStyles}
+                                        className={`${pathname === '/products' ? 'bg-black text-white rounded-md px-3 py-2' : ''}"hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
                                     >Products</Link>
                                     <Link
                                         href="/about"
-                                        className={`${pathname === '/about' ? 'bg-black text-white rounded-md px-3 py-2' : ''}"text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
+                                        style={textStyles}
+                                        className={`${pathname === '/about' ? 'bg-black text-white rounded-md px-3 py-2' : ''}"hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
                                     >About Us</Link>
                                     {session && (
                                         <Link
                                             href="/dashboard"
-                                            className={`${pathname === '/dashboard' ? 'bg-black text-white rounded-md px-3 py-2' : ''}"text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
+                                            style={textStyles}
+                                            className={`${pathname === '/dashboard' ? 'bg-black text-white rounded-md px-3 py-2' : ''}"hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
                                         >Medical Profile</Link>
                                     )}
 
@@ -240,21 +251,25 @@ const Navbar = () => {
                         <div className="space-y-1 px-2 pb-3 pt-2">
                             <Link
                                 href="/"
-                                className={`${pathname === '/' ? 'bg-black text-white block rounded-md px-3 py-2' : ''}"text-white block hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
+                                style={textStyles}
+                                className={`${pathname === '/' ? 'bg-black text-white block rounded-md px-3 py-2' : ''}"block hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
                             >Home</Link>
                             {session && (
                                 <Link
                                 href="/dashboard"
+                                style={textStyles}
                                 className={`${pathname === '/dashboard' ? 'bg-black text-white block rounded-md px-3 py-2' : ''}"text-white block hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
                             >Dashboard</Link>
                             )}
                             
                             <Link
                                 href="/products"
-                                className={`${pathname === '/products' ? 'bg-black text-white block rounded-md px-3 py-2' : ''}"text-white block hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
+                                style={textStyles}
+                                className={`${pathname === '/products' ? 'bg-black text-white block rounded-md px-3 py-2' : ''}"block hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
                             >Products</Link>
                             <Link
                                 href="/about"
+                                style={textStyles}
                                 className={`${pathname === '/about' ? 'bg-black text-white block rounded-md px-3 py-2' : ''}"text-white block hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"`}
                             >About Us</Link>
                             {!session && 
